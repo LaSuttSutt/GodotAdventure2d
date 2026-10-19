@@ -6,9 +6,9 @@ class_name Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position = SceneManager.player_spawn_position
-	pass # Replace with function body.
-
+	if SceneManager.player_spawn_position != Vector2(0, 0):
+		position = SceneManager.player_spawn_position
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
