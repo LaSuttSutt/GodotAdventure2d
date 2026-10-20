@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cyrwrswm16xfm"]
+[gd_scene format=3 uid="uid://cyrwrswm16xfm"]
 
 [ext_resource type="Script" uid="uid://d1q3ujue1h1n" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://cgonpkjm7hfhc" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Walk.png" id="2_a3d8c"]
@@ -82,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dd0ac")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_down",
 "speed": 6.0
 }, {
@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jhyir")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_left",
 "speed": 6.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7g0yx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_right",
 "speed": 6.0
 }, {
@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hnuln")
 }],
-"loop": true,
+"loop": 1,
 "name": &"move_up",
 "speed": 6.0
 }]
@@ -142,16 +142,18 @@ animations = [{
 radius = 5.0
 height = 12.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=582217581]
+collision_layer = 2
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_a3d8c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1701615618]
 sprite_frames = SubResource("SpriteFrames_aqm4k")
 animation = &"move_down"
 frame = 2
 frame_progress = 0.12063091
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1925991665]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_a3d8c")

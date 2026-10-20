@@ -34,6 +34,8 @@ animations = [{
 }]
 
 [node name="PuzzleButton" type="Area2D" unique_id=224060579]
+collision_layer = 4
+collision_mask = 14
 script = ExtResource("1_dls00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1677924090]

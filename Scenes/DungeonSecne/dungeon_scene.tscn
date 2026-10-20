@@ -812,6 +812,9 @@ terrain_set_0/terrain_0/name = "DungeonWalls"
 terrain_set_0/terrain_0/color = Color(0.88874197, 0.35601515, 0.81495184, 1)
 sources/0 = SubResource("TileSetAtlasSource_epgdu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfvh8"]
+size = Vector2(30, 30)
+
 [node name="DungeonScene" type="Node2D" unique_id=2084194436]
 
 [node name="FloorLayer" type="TileMapLayer" parent="." unique_id=1982232175]
@@ -844,6 +847,23 @@ position = Vector2(44, -29)
 [node name="SingleUsePuzzleButton" parent="RoomBegin" unique_id=1390517368 instance=ExtResource("7_3dgha")]
 position = Vector2(-164, -223)
 
+[node name="PuzzleWalls" type="StaticBody2D" parent="RoomBegin" unique_id=1281614071]
+position = Vector2(-1, -32)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomBegin/PuzzleWalls" unique_id=755654904]
+position = Vector2(-97, -8)
+shape = SubResource("RectangleShape2D_mfvh8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomBegin/PuzzleWalls" unique_id=1136006877]
+position = Vector2(1, 64)
+shape = SubResource("RectangleShape2D_mfvh8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RoomBegin/PuzzleWalls" unique_id=584536583]
+position = Vector2(9, -65)
+shape = SubResource("RectangleShape2D_mfvh8")
+
 [node name="RoomLeft" type="Node" parent="." unique_id=326745515]
 
 [node name="PuzzleButton" parent="RoomLeft" unique_id=1050340556 instance=ExtResource("6_8q6kt")]
@@ -861,6 +881,19 @@ buttons_needed = 2
 
 [node name="Block" parent="RoomLeft" unique_id=265159827 instance=ExtResource("7_8q6kt")]
 position = Vector2(-239, -120)
+
+[node name="PuzzleWalls" type="StaticBody2D" parent="RoomLeft" unique_id=1854222623]
+position = Vector2(-181, -57)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomLeft/PuzzleWalls" unique_id=102101205]
+position = Vector2(-34, -89)
+shape = SubResource("RectangleShape2D_mfvh8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomLeft/PuzzleWalls" unique_id=450002941]
+position = Vector2(71, 18)
+shape = SubResource("RectangleShape2D_mfvh8")
 
 [node name="RoomTop" type="Node" parent="." unique_id=1226107257]
 
