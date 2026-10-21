@@ -142,6 +142,9 @@ animations = [{
 radius = 5.0
 height = 12.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54fam"]
+size = Vector2(8, 8)
+
 [node name="Player" type="CharacterBody2D" unique_id=582217581]
 collision_layer = 2
 collision_mask = 7
@@ -157,3 +160,14 @@ frame_progress = 0.12063091
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1925991665]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_a3d8c")
+
+[node name="InteractArea2D" type="Area2D" parent="." unique_id=618494621]
+position = Vector2(0, 8)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea2D" unique_id=89934980]
+shape = SubResource("RectangleShape2D_54fam")
+debug_color = Color(0.3143156, 0.52299416, 0, 0.41960785)
+
+[connection signal="body_entered" from="InteractArea2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="InteractArea2D" to="." method="_on_area_2d_body_exited"]
