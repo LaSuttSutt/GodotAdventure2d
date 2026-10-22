@@ -22,11 +22,12 @@ func _physics_process(_delta: float) -> void:
 #region Signals ----------------------------------------------------------------
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	body.can_interact = true
-
+	if body.is_in_group("interactable"):
+		body.can_interact = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	body.can_interact = false
+	if body.is_in_group("interactable"):
+		body.can_interact = false
 
 #endregion
 

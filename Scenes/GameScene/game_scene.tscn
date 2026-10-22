@@ -826,6 +826,7 @@ zoom = Vector2(5, 5)
 
 [node name="NPC" parent="ObstacleLayer" unique_id=1793948346 instance=ExtResource("9_nr542")]
 position = Vector2(-53, -62)
+dialogue_lines = Array[String](["Hey there ;)", "What do you want from me?"])
 
 [node name="NPC2" parent="ObstacleLayer" unique_id=1465503213 instance=ExtResource("9_nr542")]
 position = Vector2(-41, -29)
@@ -844,6 +845,7 @@ text = "Green Ninja"
 
 [node name="NPC3" parent="ObstacleLayer" unique_id=2142472657 instance=ExtResource("9_nr542")]
 position = Vector2(54, -99)
+dialogue_lines = Array[String](["Hey you! STOP!!!", "Don't go in there!!!", "There are unsolvable puzzles to do...", "Good luck"])
 
 [node name="Sprite2D" parent="ObstacleLayer/NPC3" index="0" unique_id=1662143952]
 texture = SubResource("AtlasTexture_rpdpv")
