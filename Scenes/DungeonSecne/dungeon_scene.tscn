@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://reyee7mp77fn" path="res://Scenes/Switch/switch_puzzle_manager.tscn" id="11_1n2au"]
 [ext_resource type="PackedScene" uid="uid://byw3lsqeqeei7" path="res://Scenes/Switch/switch.tscn" id="11_godel"]
 [ext_resource type="PackedScene" uid="uid://6k3h7qcacoli" path="res://Scenes/TreasureChest/treasure_chest.tscn" id="13_7v5q4"]
+[ext_resource type="AudioStream" uid="uid://d0fk8kcjdcw16" path="res://Ninja Adventure - Asset Pack/Musics/2 - The Cave.ogg" id="14_8trvb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufixl"]
 texture = ExtResource("2_epgdu")
@@ -945,6 +946,12 @@ push_strength = 300.0
 
 [node name="Camera2D" type="Camera2D" parent="Player2/Player" unique_id=1634839287]
 zoom = Vector2(5, 5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=31437553]
+stream = ExtResource("14_8trvb")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="RoomBegin/PuzzleButton3" to="RoomBegin/LockedDoor2" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="RoomBegin/PuzzleButton3" to="RoomBegin/LockedDoor2" method="_on_puzzle_button_unpressed"]

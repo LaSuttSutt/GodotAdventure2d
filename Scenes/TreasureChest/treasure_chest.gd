@@ -18,6 +18,7 @@ func open_chest() -> void:
 	is_open = true
 	$Sprite2D.visible = true
 	$Timer.start()
+	$AudioStreamPlayer2D.play()
 	SceneManager.opened_chests.append(chest_name)
 
 

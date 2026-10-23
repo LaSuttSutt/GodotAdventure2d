@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bkkicrj8ghkx" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/SpriteSheet.png" id="8_njm7v"]
 [ext_resource type="Texture2D" uid="uid://borduqdw4j2fq" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaMageBlack/Faceset.png" id="9_bkvnf"]
 [ext_resource type="PackedScene" uid="uid://cvbf8mjppae6b" path="res://Scenes/NPX/npc.tscn" id="9_nr542"]
+[ext_resource type="AudioStream" uid="uid://cjwm6tu5y3gj0" path="res://Ninja Adventure - Asset Pack/Musics/11 - Clearing.ogg" id="14_bkvnf"]
+[ext_resource type="PackedScene" uid="uid://dgttjcxm74hh3" path="res://Scenes/Enemies/slime_enemy.tscn" id="15_rpdpv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04h35"]
 texture = ExtResource("1_l6yvh")
@@ -865,6 +867,9 @@ text = "Hey, i´m the black mage Ninja. And here is the cave entree."
 [node name="NameLabel" parent="ObstacleLayer/NPC3/CanvasLayer" parent_id_path=PackedInt32Array(2142472657, 499695191) index="2" unique_id=1377425051]
 text = "Black Mage Ninja"
 
+[node name="SlimeEnemy" parent="ObstacleLayer" unique_id=750824161 instance=ExtResource("15_rpdpv")]
+position = Vector2(19, -15)
+
 [node name="PuzzleButton" parent="." unique_id=226251960 instance=ExtResource("7_ohrk8")]
 position = Vector2(13, -139)
 
@@ -898,6 +903,13 @@ shape = SubResource("RectangleShape2D_elpgg")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="PuzzleWalls" unique_id=181400467]
 position = Vector2(77, 1)
 shape = SubResource("RectangleShape2D_elpgg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=740177479]
+process_mode = 3
+stream = ExtResource("14_bkvnf")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]

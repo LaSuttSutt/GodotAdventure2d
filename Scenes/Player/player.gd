@@ -11,6 +11,7 @@ func _ready() -> void:
 	if SceneManager.player_spawn_position != Vector2(0, 0):
 		position = SceneManager.player_spawn_position
 	update_treasure_label()
+	update_hp_bar()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -31,6 +32,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("interactable"):
 		body.can_interact = false
 
+func _on_hitbox_area_2d_body_entered(_body: Node2D) -> void:
+	SceneManager.player_hp -= 1
+	update_hp_bar()
+	if SceneManager.player_hp <= 0:
+		die()
+	
 #endregion
 
 #region Functions --------------------------------------------------------------
@@ -67,4 +74,18 @@ func push_box() -> void:
 func update_treasure_label() -> void:
 	%TreasureLabel.text = str(SceneManager.opened_chests.size())
 	
+func die() -> void:
+	SceneManager.player_hp = 3
+	get_tree().call_deferred("reload_current_scene")
+
+func update_hp_bar() -> void:
+	if SceneManager.player_hp == 3:
+		%HPBar.play("3_hp")
+	elif SceneManager.player_hp == 2:
+		%HPBar.play("2_hp")
+	elif SceneManager.player_hp == 1:
+		%HPBar.play("1_hp")
+	else:
+		%HPBar.play("0_hp")
+
 #endregion
