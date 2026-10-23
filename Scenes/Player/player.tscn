@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1q3ujue1h1n" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://cgonpkjm7hfhc" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SeparateAnim/Walk.png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://cvdfolv3c0ljy" path="res://Ninja Adventure - Asset Pack/Items/Scroll/ScrollEmpty.png" id="3_xpcdj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpcdj"]
 atlas = ExtResource("2_a3d8c")
@@ -145,6 +146,9 @@ height = 12.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54fam"]
 size = Vector2(8, 8)
 
+[sub_resource type="LabelSettings" id="LabelSettings_54fam"]
+font_size = 48
+
 [node name="Player" type="CharacterBody2D" unique_id=582217581]
 collision_layer = 2
 collision_mask = 7
@@ -168,6 +172,33 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea2D" unique_id=89934980]
 shape = SubResource("RectangleShape2D_54fam")
 debug_color = Color(0.3143156, 0.52299416, 0, 0.41960785)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1716271146]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=964812935]
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 136.0
+offset_bottom = 75.0
+
+[node name="TreasureLabel" type="Label" parent="CanvasLayer/Panel" unique_id=1987742594]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = -4.0
+offset_right = 63.0
+offset_bottom = 63.0
+text = "3"
+label_settings = SubResource("LabelSettings_54fam")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel" unique_id=377839083]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 51.0
+texture = ExtResource("3_xpcdj")
 
 [connection signal="body_entered" from="InteractArea2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="InteractArea2D" to="." method="_on_area_2d_body_exited"]

@@ -10,11 +10,13 @@ class_name Player
 func _ready() -> void:
 	if SceneManager.player_spawn_position != Vector2(0, 0):
 		position = SceneManager.player_spawn_position
+	update_treasure_label()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	move_player()
 	push_box()
+	update_treasure_label()
 	move_and_slide()
 
 #endregion
@@ -61,5 +63,8 @@ func push_box() -> void:
 		if collider_node.is_in_group("pushable"):
 			var collision_normal: Vector2 = collision.get_normal()
 			collider_node.apply_central_force(-collision_normal * push_strength)
+
+func update_treasure_label() -> void:
+	%TreasureLabel.text = str(SceneManager.opened_chests.size())
 	
 #endregion

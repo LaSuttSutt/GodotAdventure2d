@@ -850,7 +850,7 @@ text = "Did you know that there´s a cave in the east?"
 text = "Green Ninja"
 
 [node name="NPC3" parent="ObstacleLayer" unique_id=2142472657 instance=ExtResource("9_nr542")]
-position = Vector2(54, -99)
+position = Vector2(88, -121)
 dialogue_lines = Array[String](["Hey you! STOP!!!", "Don't go in there!!!", "There are unsolvable puzzles to do...", "Good luck"])
 
 [node name="Sprite2D" parent="ObstacleLayer/NPC3" index="0" unique_id=1662143952]
@@ -869,7 +869,7 @@ text = "Black Mage Ninja"
 position = Vector2(13, -139)
 
 [node name="Block" parent="." unique_id=887060632 instance=ExtResource("6_12ovb")]
-position = Vector2(105, -138)
+position = Vector2(13, -110)
 
 [node name="LockedDoor" parent="." unique_id=858108621 instance=ExtResource("8_elpgg")]
 position = Vector2(56, -140)
